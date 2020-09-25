@@ -36,6 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4861481128933686}
+  - component: {fileID: 135087535450205404}
   m_Layer: 0
   m_Name: enemy_wave
   m_TagString: Enemy
@@ -183,3 +184,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1929477794288866}
   m_Mesh: {fileID: 4300000, guid: 265abd8139f832b43a7821704b989434, type: 3}
+--- !u!135 &135087535450205404
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1622943257468720}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}
