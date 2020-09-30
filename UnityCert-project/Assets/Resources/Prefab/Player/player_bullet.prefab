@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23658015096183086}
   - component: {fileID: 108902141134733608}
   - component: {fileID: 54695462524347114}
+  - component: {fileID: 114452154749101132}
   m_Layer: 0
   m_Name: player_bullet
   m_TagString: Player
@@ -95,7 +96,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -136,6 +137,18 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114452154749101132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1724555844406922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f666702e8265346a54a4a90cb58d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletModel: {fileID: 11400000, guid: 98a908e828f66c44cbf022bee0dc74fd, type: 2}
 --- !u!135 &135007930898039452
 SphereCollider:
   m_ObjectHideFlags: 1
