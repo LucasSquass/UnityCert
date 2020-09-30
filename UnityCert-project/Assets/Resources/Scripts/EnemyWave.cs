@@ -15,33 +15,63 @@ public class EnemyWave : MonoBehaviour, IActorTemplate {
 	Vector3 sineVer;
 	float time;
 
-	public void ActorStats(SOActorModel actorModel)
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Attack();
+    }
+
+    public void Attack()
+    {
+        time += Time.deltaTime;
+        sineVer.y = Mathf.Sin(time * verticalSpeed) * verticalAmplitude;
+        transform.position = new Vector3(transform.position.x + travelSpeed * Time.deltaTime, transform.position.y + sineVer.y, transform.position.z);
+    }
+
+    #region IActorTemplate
+    public void ActorStats(SOActorModel actorModel)
 	{
-		throw new System.NotImplementedException();
+        health = actorModel.health;
+        travelSpeed = actorModel.speed;
+        hitPower = actorModel.hitPower;
 	}
 
 	public void Die()
 	{
-		throw new System.NotImplementedException();
+        Destroy(gameObject);
 	}
 
 	public int SendDamage()
 	{
-		throw new System.NotImplementedException();
+        return hitPower;
 	}
 
 	public void TakeDamage(int incomingDamage)
 	{
-		throw new System.NotImplementedException();
+        health -= incomingDamage;
 	}
+    #endregion
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    #region Collisions
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            if(health >= 1)
+            {
+                health -= other.GetComponent<IActorTemplate>().SendDamage();
+            }
+            if(health <= 0)
+            {
+                Die();
+            }
+        }
+    }
+    #endregion
 }

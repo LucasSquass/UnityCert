@@ -15,7 +15,7 @@ MonoBehaviour:
   attackType: 1
   description: Players default ship.
   health: 1
-  speed: 120
+  speed: 10
   hitPower: 1
   actor: {fileID: 1391836091570334, guid: ac0efa0818fcf0a4c947311f41567950, type: 2}
   actorsBullet: {fileID: 1724555844406922, guid: 8cabd88693e0019449b0e64aa61d601d,

@@ -92,36 +92,13 @@ public class Player : MonoBehaviour, IActorTemplate {
 		}
 	}
 
-	public void ActorStats(SOActorModel actorModel)
+    #region IActorTemplate
+    public void ActorStats(SOActorModel actorModel)
 	{
 		health = actorModel.health;
 		travelSpeed = actorModel.speed;
 		hitPower = actorModel.hitPower;
 		fire = actorModel.actorsBullet;
-	}
-
-	private void OntriggerEnter(Collider other)
-	{
-		if(other.tag == "Enemy")
-		{
-			if(health >= 1)
-			{
-				if(transform.Find("energy +1(Clone)"))
-				{
-					Destroy(transform.Find("energy +1(Clone)").gameObject);
-					health -= other.GetComponent<IActorTemplate>().SendDamage();
-				}
-				else
-				{
-					health -= 1;
-				}
-			}
-
-			if(health <= 0)
-			{
-				Die();
-			}
-		}
 	}
 
 	public void Die()
@@ -138,4 +115,31 @@ public class Player : MonoBehaviour, IActorTemplate {
 	{
 		health -= incomingDamage;
 	}
+    #endregion
+
+    #region Collisions
+    private void OntriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            if (health >= 1)
+            {
+                if (transform.Find("energy +1(Clone)"))
+                {
+                    Destroy(transform.Find("energy +1(Clone)").gameObject);
+                    health -= other.GetComponent<IActorTemplate>().SendDamage();
+                }
+                else
+                {
+                    health -= 1;
+                }
+            }
+
+            if (health <= 0)
+            {
+                Die();
+            }
+        }
+    }
+    #endregion
 }
