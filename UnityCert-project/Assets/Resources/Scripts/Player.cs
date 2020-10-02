@@ -103,6 +103,7 @@ public class Player : MonoBehaviour, IActorTemplate {
 
 	public void Die()
 	{
+        GameManager.Instance.LifeLost();
 		Destroy(gameObject);
 	}
 
@@ -118,7 +119,7 @@ public class Player : MonoBehaviour, IActorTemplate {
     #endregion
 
     #region Collisions
-    private void OntriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy")
         {

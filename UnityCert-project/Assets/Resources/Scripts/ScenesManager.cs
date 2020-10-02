@@ -28,11 +28,11 @@ public class ScenesManager : MonoBehaviour {
 
     public void BeginGame()
     {
-        SceneManager.LoadScene("InitialScene");
+        LoadScene(Scenes.INITIALSCENE);
     }
 
     public void GameOver()
     {
-        SceneManager.LoadScene("GameOver");
+        LoadScene(Scenes.GAMEOVER);
     }
 }
