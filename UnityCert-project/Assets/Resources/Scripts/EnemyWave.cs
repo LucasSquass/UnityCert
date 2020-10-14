@@ -71,6 +71,7 @@ public class EnemyWave : MonoBehaviour, IActorTemplate {
             }
             if(health <= 0)
             {
+                GameManager.Instance.GetComponent<ScoreManager>().SetScore(score);
                 Die();
             }
         }

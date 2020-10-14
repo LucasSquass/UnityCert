@@ -33,6 +33,7 @@ public class ScenesManager : MonoBehaviour {
 
     public void GameOver()
     {
+        Debug.Log("ENDSCORE: " + GameManager.Instance.GetComponent<ScoreManager>().PlayerScore);
         LoadScene(Scenes.GAMEOVER);
     }
 }

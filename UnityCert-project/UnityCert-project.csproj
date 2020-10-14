@@ -312,6 +312,7 @@
     <Compile Include="Assets\Resources\Scripts\PlayerBullet.cs" />
     <Compile Include="Assets\Resources\Scripts\PlayerSpawner.cs" />
     <Compile Include="Assets\Resources\Scripts\ScenesManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\Resources\Scripts\SOActorModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
