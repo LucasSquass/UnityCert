@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: dfca48885c094944492f6fa96b4f06d6,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -155,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actorModel: {fileID: 11400000, guid: 5413d83d6a6576e4bb9bf05af3cb3486, type: 2}
   spawnRate: 2
-  quantity: 4
+  quantity: 10
 --- !u!1 &640876223
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +370,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1838161862}
   - component: {fileID: 1838161861}
+  - component: {fileID: 1838161863}
+  - component: {fileID: 1838161864}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -400,6 +403,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1838161863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1838161860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb51429199f6db44e93060e9b375eae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1838161864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1838161860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f566af0b2d5a944a27f5ebd94a4116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2053592181
 GameObject:
   m_ObjectHideFlags: 0
